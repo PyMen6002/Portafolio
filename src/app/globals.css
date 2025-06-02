@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+body {
+  background-image: linear-gradient(to bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  color: white;
+  margin: 0;
+  min-height: 100vh; /* Asegúrate de que el fondo cubra toda la pantalla */
+}
+
+/* Navbar */
+header {
+  background: black;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 50;
+  position: sticky;
+  top: 1%;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header:hover {
+  background-color: rgba(0, 0, 0, 1); /* Fondo completamente opaco cuando pasa el ratón */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra más intensa al hacer hover */
+}
+
+/* Sección Inicio */
+section {
+  margin-top: 0;
+  padding-top: 4rem; /* Un pequeño padding para que no quede pegado al navbar */
+  background: transparent; /* Fondo transparente */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translatey(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translatey(0%);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Desplazamiento suave por defecto */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Si el usuario ha activado "Reducir movimientos", el desplazamiento será instantáneo */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
